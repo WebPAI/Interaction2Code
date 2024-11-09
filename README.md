@@ -4,9 +4,9 @@ Interaction2Code is a collection of webpage datasets for interactive webpage gen
 
 This repository contains:
 
-1. **Dataset**. The sample of our experiment data is available in `/sample`. We will release the full dataset as soon as the paper is published.
+1. **Dataset**. The sample of our experiment data is available in `/sample`.
 2. **Codes**. The code is available in `/code`, including the interactive webpage generation and metric calculation.
-3. **Human evaluation results** The results of human evaluation are in `/huamn_evalauation`. We will release the full human evaluation results as soon as the paper is published.
+3. **Human evaluation results** The results of human evaluation are in `/huamn_evalauation`.
 
 
 [comment]: <> (2. )
