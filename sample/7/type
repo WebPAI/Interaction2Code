@@ -1,0 +1,6 @@
+url:https://donate.bloodcancer.org.uk/
+type:form
+1:label/button, input/new component, text
+2:summary/detail/text, new component
+3:button/input/text
+4:button/empty/switch, text

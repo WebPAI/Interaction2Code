@@ -1,0 +1,6 @@
+url:https://www.reddit.com/submit?type=TEXT
+type:video
+1:button/empty/switch, underline
+2:select/option/list, text
+3:summary/detail/text, list
+4:button/form, input/new window

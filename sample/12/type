@@ -1,0 +1,5 @@
+url:https://skunksadventures.fandom.com/wiki/Fox
+type:entertainment
+1:select/option/text, new component
+2:button/template/text, new component
+3:summary/detail/text
