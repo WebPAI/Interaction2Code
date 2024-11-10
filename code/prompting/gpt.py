@@ -4,6 +4,16 @@ from openai import OpenAI
 import json
 
 
+def all_interaction_prompting(client, image_files, prompt_method):
+    images = []
+    for image_file in image_files:
+        images.append(encode_image(image_file))
+    interaction_number = len(images) - 1
+    html = gpt4v_call_with_all_images(client, images, get_prompt_all_interactions(interaction_number=interaction_number,
+                                                                                  prompt_method=prompt_method))
+    return html
+
+
 def direct_prompting(client, image_file1, image_file2):
     '''
     {original input image, image after interaction + prompt} -> {output html}
@@ -60,6 +70,28 @@ def generate_page(path, web_number, interact_number, prompt_method):
         fs.write(html)
 
 
+def generate_page_for_all_interactions(path, web_number, prompt_method):
+    save_path = path + f"{web_number}/{prompt_method}-gpt.html"
+
+    # interaction_number = get_interact_number(path + f"{web_number}/")
+    interaction_number = 4
+
+    if prompt_method == "mark_prompt":
+        image_files = [path + f"{web_number}/{1}-1-mark.png"]
+    else:
+        image_files = [path + f"{web_number}/{1}-1.png"]
+
+    for i in range(1, interaction_number + 1):
+        if prompt_method == "mark_prompt":
+            image_files.append(path + f"{web_number}/{i}-2-mark.png")
+        else:
+            image_files.append(path + f"{web_number}/{i}-2.png")
+
+    html = all_interaction_prompting(client=openai_client, image_files=image_files, prompt_method=prompt_method)
+    with open(save_path, "w") as fs:
+        fs.write(html)
+
+
 if __name__ == "__main__":
     with open("key.json") as fs:
         keys = json.loads((fs.read()))
@@ -69,4 +101,7 @@ if __name__ == "__main__":
         base_url="https://openkey.cloud/v1"
     )
 
-    generate_page(path="../../sample/", web_number=1, interact_number=1, prompt_method="direct_prompt")
+    # generate_page(path="../../sample/", web_number=1, interact_number=1, prompt_method="direct_prompt")
+    # generate_page_for_all_interactions(path="../../sample/", web_number=1, prompt_method="mark_prompt")
+    # generate_page_for_all_interactions(path="../../sample/", web_number=0, prompt_method="direct_prompt")
+    generate_page_for_all_interactions(path="../../sample/", web_number=0, prompt_method="mark_prompt")

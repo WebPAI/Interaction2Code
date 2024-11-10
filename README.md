@@ -151,7 +151,19 @@ It should be noted here that sometimes the lack of interaction does not result i
 (j) **Wrong function**: MLLM implements the wrong function. As shown in Figure (j), in the original webpage, clicking the button will cause a date selection box to appear, but in the generated webpage, clicking the button will generate a date display box.
 
 
+## Demo Video
 
+In this demo video, we use gpt-4o under mark prompting to generate the interactive webpage in `example/`:
+
+![Example](./assets/example.png)
+
+The demo video is as following:
+
+[comment]: <> (```HTML)
+
+[comment]: <> (<video src="./assets/video.mp4" controls="controls" width="500" height="300"></video>)
+
+https://github.com/user-attachments/assets/891e374b-e2d3-48f0-901d-53f90e5d8892
 
 
 ## Acknowledgement

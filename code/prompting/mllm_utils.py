@@ -2,6 +2,7 @@ import base64
 from PIL import Image
 import retry
 import google.generativeai as genai
+import os
 
 
 @retry.retry(tries=2, delay=2)
@@ -153,6 +154,37 @@ def claude_call_with_two_images(anthropic_client, source_image, interact_image, 
     return response
 
 
+
+def claude_call_with_all_images(anthropic_client, images, prompt):
+    messages = [
+        {"role": "user", "content":
+            [
+                {"type": "text", "text": prompt}
+            ]
+        }
+    ]
+
+    for img in images:
+        messages[0]["content"].append(
+            {"type": "image", "source": {
+                "type": "base64",
+                "media_type": "image/png",
+                "data": f"{img}"
+            }}
+        )
+
+    response = anthropic_client.messages.create(
+        model="claude-3-5-sonnet-20240620",
+        max_tokens=4096,
+        messages=messages,
+        temperature=1
+    )
+    print(response)
+    response = response.content[0].text.strip()
+    response = cleanup_response(response)
+    return response
+
+
 def cleanup_response(response):
     ## simple post-processing
     if response[: 3] == "```":
@@ -182,3 +214,11 @@ def encode_image(image_path):
 # encoding image for gemini
 def gemini_encode_image(image_path):
     return Image.open(image_path)
+
+
+def get_interact_number(folder_path):
+    png_count = 0
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.png'):
+            png_count += 1
+    return int(png_count / 5)

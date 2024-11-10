@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #1A1A1A;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            height: 50px;
+            width: 50px;
+            background-color: blue;
+        }
+        .menu, .dropdown-content, .book-appointment, .contact-info {
+            display: flex;
+            align-items: center;
+        }
+        .menu-item {
+            margin: 0 15px;
+            cursor: pointer;
+            position: relative;
+        }
+        .dropdown-content, .symptoms-dropdown {
+            display: none;
+            position: absolute;
+            background-color: #2F4F6F;
+            padding: 20px;
+            border-radius: 5px;
+            top: 40px;
+            width: 200px;
+        }
+        #interact1:hover .dropdown-content,
+        #interact3:hover .symptoms-dropdown {
+            display: block;
+        }
+        .book-appointment {
+            background-color: #4682B4;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .blog-header {
+            background-color: #2F4F6F;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .blog-posts {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .blog-post {
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        .blog-post img {
+            width: 100%;
+            height: 150px;
+            background-color: blue;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .blog-content {
+            padding: 10px;
+        }
+        .read-more {
+            color: #4682B4;
+            text-decoration: none;
+        }
+        .floating-chat {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        #interact4 {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #FFA500;
+            border-radius: 5px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 20px;
+        }
+        #interact4.visible {
+            display: block;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            document.querySelector('.book-appointment').addEventListener('click', function(){
+                this.style.backgroundColor = '#FFA500';
+            });
+            document.querySelector('.floating-chat').addEventListener('click', function(){
+                document.getElementById('interact4').classList.toggle('visible');
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="placeholder.jpg" alt="Logo">
+        <div class="menu">
+            <div class="menu-item">ABOUT</div>
+            <div class="menu-item" id="interact1">SERVICES
+                <div class="dropdown-content">
+                    <div>Chiropractic Care</div>
+                    <div>Prenatal Care</div>
+                    <div>Pediatric Care</div>
+                    <div>Auto Injury</div>
+                    <div>Athlete Care</div>
+                    <div>Spinal Decompression</div>
+                    <div>Laser Therapy</div>
+                    <div>Physical Therapy in New Richmond</div>
+                    <div>Spine X-Rays</div>
+                    <div>Wellness Care</div>
+                    <div>Dry Needling</div>
+                    <div>Shockwave Therapy</div>
+                    <div>Functional Medicine</div>
+                </div>
+            </div>
+            <div class="menu-item" id="interact3">SYMPTOMS
+                <div class="symptoms-dropdown">
+                    <div>Spinal Health</div>
+                    <div>Back Pain</div>
+                    <div>Headaches & Migraines</div>
+                    <div>Neck pain</div>
+                    <div>Hip Pain</div>
+                    <div>Sciatica</div>
+                    <div>Scoliosis</div>
+                    <div>Injuries</div>
+                    <div>Disc Injuries</div>
+                    <div>Whiplash</div>
+                    <div>Pinched Nerve</div>
+                    <div>Work Injuries</div>
+                    <div>Rotator Cuff</div>
+                    <div>Sports Injuries</div>
+                    <div>Overuse Injuries</div>
+                    <div>Extremities</div>
+                    <div>Arm Pain</div>
+                    <div>Shoulder Pain</div>
+                    <div>Elbow Pain</div>
+                    <div>Carpal Tunnel</div>
+                    <div>Leg Pain</div>
+                    <div>Knee Pain</div>
+                    <div>Plantar Fasciitis</div>
+                    <div>Other</div>
+                    <div>Arthritis</div>
+                    <div>Neuropathy</div>
+                    <div>Vertigo</div>
+                </div>
+            </div>
+            <div class="menu-item">RESOURCES</div>
+            <div class="menu-item">CONTACT</div>
+        </div>
+        <div>
+            <div class="book-appointment" id="interact2">BOOK APPOINTMENT</div>
+            <div class="contact-info">(715) 322-3784</div>
+        </div>
+    </div>
+    <div class="blog-header">
+        <h1>BLOG</h1>
+    </div>
+    <div class="blog-posts">
+        <div class="blog-post">
+            <img src="placeholder.jpg" alt="Blog Image 1">
+            <div class="blog-content">
+                <h4>HEADACHE AND MIGRAINE TRIGGERS: HOW CHIROPRACTIC TREATMENT CAN ADDRESS UNDERLYING CAUSES</h4>
+                <p>Headache and migraine disorders are among the most debilitating conditions faced by individuals across the globe, impacting not just their physical wellbeing but also mental</p>
+                <a href="#" class="read-more">READ MORE »</a>
+                <p>September 25, 2023</p>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="placeholder.jpg" alt="Blog Image 2">
+            <div class="blog-content">
+                <h4>HOW TO IMPROVE YOUR FLEXIBILITY, MOBILITY & RANGE OF MOTION</h4>
+                <p>Do you feel like you're stuck in a rut? Are you struggling with mobility and flexibility issues? If so, don’t worry – you’re not alone.</p>
+                <a href="#" class="read-more">READ MORE »</a>
+                <p>August 27, 2023</p>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="placeholder.jpg" alt="Blog Image 3">
+            <div class="blog-content">
+                <h4>7 WAYS SPINAL DECOMPRESSION THERAPY CAN HELP YOUR SPINE</h4>
+                <p>Have you been struggling with chronic back pain? Have you tried multiple therapies, but none seem to offer any relief? You might want to consider</p>
+                <a href="#" class="read-more">READ MORE »</a>
+                <p>August 7, 2023</p>
+            </div>
+        </div>
+    </div>
+    <div class="floating-chat">
+        <img src="placeholder.jpg" height=20 width=20 alt="Chat Icon">
+    </div>
+    <div id="interact4">
+        <h4>How can we help?</h4>
+        <p>Enter your question below and our team will get back to you ASAP.</p>
+        <form>
+            <input type="text" placeholder="Name"><br>
+            <input type="text" placeholder="Phone"><br>
+            <input type="email" placeholder="E-mail"><br>
+            <textarea placeholder="Message"></textarea><br>
+            <button type="submit">Send</button>
+        </form>
+        <p>By submitting you agree to receive SMS, emails, and phone calls. Msg & Data rates may apply.</p>
+        <small>Powered by CHIROPIPE</small>
+    </div>
+</body>
+</html>
