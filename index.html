@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Interaction2Code: Benchmarking MLLM-based Interactive Webpage Code Generation from Interactive Prototyping">
+  <meta name="keywords" content="Main, Web, GPT-4">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interaction2Code</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <!-- <style>
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Interaction2Code: Benchmarking MLLM-based Interactive Webpage Code Generation from Interactive Prototyping
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://whalexiao.github.io/
+              ">Jingyu Xiao</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://yxwan123.github.io/
+              ">Yuxuan Wan</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://yintonghuo.github.io/
+              ">Yintong Huo</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                Zixin Wang<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Xinyi Xu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://jarviswang94.github.io/
+              ">Wenxuan Wang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Zhiyao Xu</a><sup>3</sup>
+              </span>
+              <span class="author-block">
+                Yuhang Wang</a><sup>4</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://www.cse.cuhk.edu.hk/lyu/home
+              ">Michael R.Lyu</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>The Chinese University of Hong Kong,</span><br />
+              <span class="author-block"><sup>2</sup>Singapore Management University,</span><br />
+              <span class="author-block"><sup>3</sup>Tsinghua Shenzhen International Graduate School,</span><br />
+              <span class="author-block"><sup>4</sup>Southwest University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2411.03292" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/WebPAI/Interaction2Code"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/whale99/Interaction2Code"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+                </span>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Multimodal Large Language Models (MLLMs) have demonstrated remarkable performance on the design-to-code task, i.e., generating UI code from UI mock-ups. However, existing benchmarks only contain static web pages for evaluation and ignore the dynamic interaction, limiting the practicality, usability and user engagement of the generated webpages.
+
+              To bridge these gaps, we present the first systematic investigation of MLLMs in generating interactive webpages. Specifically, we formulate the Interaction-to-Code task and establish the Interaction2Code benchmark, encompassing <b>127</b> unique webpages and <b>374</b> distinct interactions across <b>15</b> webpage types and <b>31</b> interaction categories. Through comprehensive experiments utilizing state-of-the-art (SOTA) MLLMs, evaluated via both automatic metrics and human assessments, we identify four critical limitations of MLLM on Interaction-to-Code task: (1) inadequate generation of interaction compared with full page, (2) prone to ten types of failure, (3) poor performance on visually subtle interactions, and (4) insufficient undestanding on interaction when limited to single-modality visual descriptions. To address these limitations, we propose four enhancement strategies: Interactive Element Highlighting, Failureaware Prompting (FAP), Visual Saliency Enhancement, and Visual-Textual Descriptions Combination, all aiming at improving MLLMs’ performance on the Interaction-toCode task. The Interaction2Code benchmark and code are available in https://github. com/WebPAI/Interaction2Code.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+  
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Dataset Examples</h2>
+          <div class="content has-text-justified">
+            <p>We show the comparison between UI2Code benchmark and our Interaction2Code benchmark. UI2Code benchmark only contains the static webpage, whereas Interaction2Code contains interactive webpage, which is represented by interactive prototyping.</p>
+            <img src="./static/images/benchmark.png" class="example-image" alt="Example image."/>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Overall -->
+      <br />
+      <div style="text-align:center">
+        <h2 class="title is-3">Overall Architecture</h2>
+      </div>
+      <div class="content has-text-justified">
+
+        <!-- <br><br/> -->
+        <p></p>
+        <!-- <p>
+        After training the main model through a warm-up, we use the proposed risk hedging process to only select confident samples to train SplitNet. 
+        With SplitNet, we obtain clean probability and split confidence, and with this information, we train the main model through SSL. 
+        Loss distribution generated by the main model is used in risk hedging. 
+        The main model and SplitNet can be alternately improved through this iterative process.
+      </p> -->
+      </div>
+      <div class="columns is-centered">
+        <img style='height: auto; width: 90%; object-fit: contain' src="static/images/overview.png"
+          alt="overview_image">
+      </div>
+
+
+<!-- 
+  <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{yuan2023cipherchat,
+  title={GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher}, 
+  author={Youliang Yuan and Wenxiang Jiao and Wenxuan Wang and Jen-tse Huang and Pinjia He and Shuming Shi and Zhaopeng Tu},
+  year={2023},
+  eprint={2308.06463},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL}
+}</code></pre>
+  </div>
+</section> -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <!-- <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a> -->
+        <a class="icon-link" href="https://github.com/Brian-Lei-XIA" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                code</a> of this website,
+              we just ask that you link back to this page in the footer.
+              Please remember to remove the analytics code included in the header of the website which
+              you do not want on your website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+<script>
+  function changeContent() {
+    const dropdown = document.getElementById("dropdown");
+    const selected = dropdown.value;
+    const sections = ["baseline", "morse-code", "caesar", "unicode", "selfcipher-en", "selfcipher-zh"];
+
+    sections.forEach((section) => {
+      document.getElementById(section).style.display = (section === selected) ? "block" : "none";
+    });
+  }
+</script>
+
+</html>
