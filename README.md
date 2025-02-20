@@ -2,8 +2,7 @@
 
 Interaction2Code is a collection of webpage datasets for interactive webpage generation [Paper](https://arxiv.org/abs/2411.03292).
 
-Quick links:  [Project Page](https://webpai.github.io/Interaction2Code/) | [Benchmark Examples](#Benchmark-Examples) | [Dataset Download](#Dataset-Download) | [Hugging-face](https://huggingface.co/datasets/whale99/Interaction2Code) | [Leaderboard](#Leaderboard) | [Code usage](#Code-Usage) | [Demo Video](#Demo-Video) 
-
+Quick links:  [Project Page](https://webpai.github.io/Interaction2Code/) | [Benchmark Examples](#Benchmark-Examples) | [Dataset Download](#Dataset-Download) | [Hugging-face](https://huggingface.co/datasets/whale99/Interaction2Code) | [Leaderboard](#Leaderboard) | [Code usage](#Code-Usage) | [Demo Video](#Demo-Video)
 
 ## Repository Organization
 
