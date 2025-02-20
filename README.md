@@ -9,13 +9,6 @@ This repository contains:
 3. **Human evaluation results** The results of human evaluation are in `/huamn_evalauation`.
 
 
-[comment]: <> (2. )
-
-[comment]: <> (3. **Link to supplementary materials.** We provide all the screen recordings in the usefulness study and our prompt details via this [link]&#40;https://drive.google.com/drive/folders/1FnR6MTKCSWFsUP__qO-J5YRhSB7RRDI-?usp=sharing&#41;.)
-
-[comment]: <> (4. **A user-friendly tool based on DCGen**. You can try out the tool [here]&#40;http://13.229.66.240:8080/&#41;.)
-
-[comment]: <> (![Topic Distribution]&#40;./assets/topic.png&#41;)
 
 ## Repository Organization
 
