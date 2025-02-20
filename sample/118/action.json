@@ -1,0 +1,95 @@
+{
+    "link": "https://forum.shopware.com/",
+    "topic": "community",
+    "framework": "Ember",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click on the \"登录\" button",
+        "description": "after clicking on the button, turn  to the log-in page",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click on the magnifier button",
+        "description": "after clicking on the button, a query bar show up",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click on the menu button",
+        "description": "after clicking on the button, a dropdown list of setting shows up",
+        "tag type": [
+            "button",
+            "select"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click on the \"最新\" button",
+        "description": "after clicking on the button, the community posts will be aranged in time order",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click on the \"类别\" button",
+        "description": "after clicking on the button, a query bar and a selection list will pop out with post-category options",
+        "tag type": [
+            "button",
+            "select"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    },
+    "6": {
+        "src": "10",
+        "dst": "11",
+        "action": "click on the \"标签\" button",
+        "description": "after clicking on the button, a query bar and a selection list will pop out with post-label options",
+        "tag type": [
+            "button",
+            "select"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    },
+    "7": {
+        "src": "12",
+        "dst": "13",
+        "action": "click on the one of the category options",
+        "description": "after clicking on the option \"Shopware 6\", the category will be shown in the \"类别\" selection and the posts with the corresponding category will be shown",
+        "tag type": [
+            "button",
+            "select",
+            "option"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    }
+}

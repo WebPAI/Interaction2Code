@@ -27,11 +27,8 @@ diff-lines() {
         done
 }
 
-if [ "$1" != "" ]; then		#可查看单个文件的差异（方法：git-diff-lines  xxx.c）
+if [ "$1" != "" ]; then
         git diff --no-index  --  "$1" | diff-lines
 else
         git diff output1.csv output2.csv  | diff-lines
 fi
-
-
-#git diff -U0 | diff-lines output1.csv output2.csv

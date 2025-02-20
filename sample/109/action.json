@@ -1,0 +1,85 @@
+{
+    "link": "https://addons.mozilla.org/",
+    "topic": "software",
+    "framework": "traditional",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "move the cursor to \"More...\" button",
+        "description": "when moving the cursor to \"More...\" button, a new component appear, which contains 2 new buttons.",
+        "tag type": [
+            "",
+            "button",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "move the cursor to the \"Turbo Download Manager\" extension.",
+        "description": "when moving the cursor to the \"Turbo Download Manager\" extension., the rating of it appears.",
+        "tag type": [
+            "",
+            "button",
+            "link",
+            "image",
+            "area"
+        ],
+        "visual type": [
+            "",
+            "new component"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click the \"login\" button",
+        "description": "after clicking the \"login\" button, go to the login page",
+        "tag type": [
+            "",
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "",
+            "new page"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click the \"get the extension\" button",
+        "description": "after clicking the \"get the extension\" button, go to the new page where users can download the extension.",
+        "tag type": [
+            "",
+            "button",
+            "link",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "new page"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click the \"Desktop\" button",
+        "description": "after clicking the \"Desktop\" button, go to the new page, where users can download firefox for desktop.",
+        "tag type": [
+            "",
+            "button",
+            "link",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "new page"
+        ]
+    }
+}

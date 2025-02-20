@@ -1,0 +1,99 @@
+{
+    "link": "https://sentry.io/",
+    "topic": "Code",
+    "framework": "react",
+    "1": {
+        "src": "1",
+        "dst": "2",
+        "action": "hover the mouse over the \"breaks\" item",
+        "description": "When the mouse hover over the \"breaks\" item, the \"breaks\" item position changes",
+        "tag type": [
+            "span"
+        ],
+        "visual type": [
+            "position"
+        ]
+    },
+    "2": {
+        "src": "3",
+        "dst": "4",
+        "action": "hover the mouse over the \"Want to connect with the folks building Sentry? Join us on Discord \" item",
+        "description": "When the mouse hover over the \"Want to connect with the folks building Sentry? Join us on Discord \" item, the item color changes",
+        "tag type": [
+            "span"
+        ],
+        "visual type": [
+            "color"
+        ]
+    },
+    "3": {
+        "src": "5",
+        "dst": "6",
+        "action": "hover the mouse over the \"PRODUCT \" item",
+        "description": "When the mouse hover over the \"PRODUCT\" item, the item color changes",
+        "tag type": [
+            "span",
+            "button"
+        ],
+        "visual type": [
+            "color"
+        ]
+    },
+    "4": {
+        "src": "7",
+        "dst": "8",
+        "action": "click to the \"PRODUCT\" item",
+        "description": "When the \"PRODUCT\" item is clicked, the new component and text appear",
+        "tag type": [
+            "span",
+            "button"
+        ],
+        "visual type": [
+            "text",
+            "new component",
+            "color"
+        ]
+    },
+    "5": {
+        "src": "9",
+        "dst": "10",
+        "action": "click to the \"Next.js\" select",
+        "description": "When the \"Next.js\" select is clicked, the new component, option and text appear",
+        "tag type": [
+            "select",
+            "option"
+        ],
+        "visual type": [
+            "text",
+            "new component"
+        ]
+    },
+    "6": {
+        "src": "11",
+        "dst": "12",
+        "action": "switch \"Python\" option to \"PHP\" option",
+        "description": "When user switches \"Python\" option to \"PHP\" option, the page switches",
+        "tag type": [
+            "option",
+            "select"
+        ],
+        "visual type": [
+            "switch",
+            "size"
+        ]
+    },
+    "7": {
+        "src": "13",
+        "dst": "14",
+        "action": "click to the Triangle mark",
+        "description": "When the Triangle mark is clicked, the image switches",
+        "tag type": [
+            "button",
+            "image"
+        ],
+        "visual type": [
+            "switch",
+            "position"
+        ]
+    }
+}

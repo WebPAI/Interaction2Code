@@ -1,0 +1,84 @@
+{
+    "link": "https://paw-show-jgudo.vercel.app/",
+    "topic": "community",
+    "framework": "react",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "move the cursor to the card",
+        "description": "when the cursor touch the card, the card flip and show the pet's information",
+        "tag type": [
+            "",
+            "image",
+            "area"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text",
+            "switch"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click the \"login\" button",
+        "description": "after clicking \"login\" button, go to login page",
+        "tag type": [
+            "",
+            "button",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "new page"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click the \"share my cat\" button",
+        "description": "after clicking \"share my cat\" button, go to a new page to fill in pet's information",
+        "tag type": [
+            "",
+            "button",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "new page",
+            "text"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click the user's avatar and name",
+        "description": "after clicking user's avatar and name, a new component pop out, which contains 2 button, \"My Profile\" and \"Logout\"",
+        "tag type": [
+            "",
+            "button",
+            "text",
+            "image"
+        ],
+        "visual type": [
+            "",
+            "new component"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click the \"Logout\" button",
+        "description": "after clicking he \"Logout\" button, a new conponent pop out asking whether you are sure to logout",
+        "tag type": [
+            "",
+            "button",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "new component"
+        ]
+    }
+}

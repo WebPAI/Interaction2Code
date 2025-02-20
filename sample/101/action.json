@@ -1,0 +1,81 @@
+{
+    "link": "https://socialgen.vercel.app/",
+    "topic": "social media",
+    "framework": "react",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click the \"theme-switch\" button",
+        "description": "click the \"theme-switch\" button, the background color change from white to dark purple",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "color"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click the \"login\" button",
+        "description": "after clicking the \"login\" button, turn to login page",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click the \"Create a post\" item",
+        "description": "after clicking the \"Create a post\" button, a new window pop out. there is options to choose the visibility of the post, and a text box to input post content, and a file upload button to upload image and video.",
+        "tag type": [
+            "button",
+            "input"
+        ],
+        "visual type": [
+            "new window",
+            "new component"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click the \"More\" button",
+        "description": "after clicking the \"More\" button, a new component pop out, which contains a \"Bookmark Post\" button.",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click the \"Comment\" button",
+        "description": "after clicking the \"Comment\" button, a new component pop out, where we can see others' comments and a text box to write a comment.",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new component",
+            "text"
+        ]
+    },
+    "6": {
+        "src": "10",
+        "dst": "11",
+        "action": "click the \"Message\" button",
+        "description": "after clicking the \"Message\" button, a new component pop out, where we can send message to the current user.",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new component",
+            "text"
+        ]
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "link": "https://www.vutuv.de/",
+    "topic": "networking",
+    "framework": "traditional",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click on the \"Log In\" button",
+        "description": "after clicking the button, turn to the login page",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click on \"Choose a gender\"",
+        "description": "after clicking, a dropdown selection with three options: \"male\", \"female\", and \"other\", shows up",
+        "tag type": [
+            "select"
+        ],
+        "visual type": [
+            "new component",
+            "text"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click on an option\"male\"",
+        "description": "after clicking, the text \"male\" shows up in the original selection box",
+        "tag type": [
+            "option"
+        ],
+        "visual type": [
+            "text",
+            "switch"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click on the \"Search\" button",
+        "description": "after clicking the button, turn to the search page, where there is a query bar and search tips",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    }
+}

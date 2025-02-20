@@ -1,34 +1,34 @@
 import json
 import os.path
-
 from selenium.webdriver.common.by import By
-
 import cv2
-from PIL import Image
 import torch
 from torch.nn.functional import cosine_similarity
-import numpy as np
 import clip
 from nltk.translate.bleu_score import sentence_bleu
-import subprocess
 import easyocr
 from skimage.metrics import structural_similarity as ssim
 import re
-from metric_utils import get_interact_part, preprocess_for_evaluation
 import shutil
-
+from metric_utils import *
+from tqdm import tqdm
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
 
 
 def interact_by_id(file_name, folder_path):
-    print(file_name)
+    # print(file_name)
     if os.path.exists(folder_path):
         shutil.rmtree(folder_path)
+    # if os.path.exists(folder_path):
+    #     return
+    # else:
+    #     print(file_name)
+
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
-    web_driver = WebDriver(browser_name='firefox', url=None, file=file_name, string=None, headless=True)
+    web_driver = WebDriver(browser_name='firefox', url=None, file=file_name, string=None, headless=False)
 
     time.sleep(1)
     web_driver.take_screenshot(folder_path + "0_source.png")
@@ -43,11 +43,14 @@ def interact_by_id(file_name, folder_path):
             # print(element.tag, element.attrib, xpath, element.text, selenium_element.location)
             # web_driver.move_interact(selenium_element)
             web_driver.click_interact(selenium_element, path=folder_path)
+            # parent_element = selenium_element.
+            # web_driver.click_interact(parent_element, path=folder_path)
+
         except Exception as e:
             print(e)
             continue
     web_driver.quit()
-    # delete_duplicate_images(folder_path=folder_path)
+    # (folder_path=folder_path)
 
 
 def clip_similarity(image_path1, image_path2):
@@ -219,84 +222,24 @@ def get_image_size(image_path):
     return width, height
 
 
-def get_interaction_score(web_name, model_name, interact_name):
-    src_position = interact_name.split("_")
-    src_width, src_height = get_image_size(f"./predictions/{web_name}/0_source.png")
-    src_x = int(src_position[1]) / src_height
-    src_y = int(src_position[2]) / src_width
-
-    most_similar_image_name, most_similar_image_path, cp_similarity = find_match_interaction(
-        web_page_folder_path=f"./predictions/{web_name}/{model_name}_{interact_name}",
-        reference_image_path=f"./predictions/{web_name}/{interact_name}.png")
-
-    interact_position = most_similar_image_name.split("_")
-    interact_width, interact_height = get_image_size(f"./predictions/{web_name}/0_source.png")
-    interact_x = int(interact_position[1]) / interact_height
-    interact_y = int(interact_position[2]) / interact_width
-
-    # blocks.append({'text': item[0].lower(),
-    #                'bbox': (y_min / y_w, x_min / x_w, (y_max - y_min + 1) / y_w, (x_max - x_min + 1) / x_w),
-    #                'color': color})
-
-    position_similarity = 1 - max(abs(interact_x - src_x), abs(interact_y - src_y))
-
-    # position_similarity = 1 - calculate_distance_max_1d(
-    #     predict_blocks_m[i]['bbox'][0] + predict_blocks_m[i]['bbox'][2] / 2, \
-    #     predict_blocks_m[i]['bbox'][1] + predict_blocks_m[i]['bbox'][3] / 2, \
-    #     original_blocks_m[j]['bbox'][0] + original_blocks_m[j]['bbox'][2] / 2, \
-    #     original_blocks_m[j]['bbox'][1] + original_blocks_m[j]['bbox'][3] / 2)
-
-    convert_image_to_code(f"predictions/{web_name}/{model_name}_{interact_name}/0_source.png", "output1.csv")
-    # convert_image_to_code("predictions/10955/gpt_42_372_915_click/8_256_127_click.png", "output2.py")
-    # convert_image_to_code("predictions/10955/gpt_42_372_915_click/16_518_324_click.png", "output2.py")
-    convert_image_to_code(most_similar_image_path, "output2.csv")
-    img1 = git_difference(output_file="diff.csv", source_file="output1.csv", interaction_file="output2.csv")
-
-    convert_image_to_code(f"predictions/{web_name}/0_source.png", "output1.csv")
-    # # convert_image_to_code("predictions/10955/gpt_42_372_915_click/8_256_127_click.png", "output2.py")
-    convert_image_to_code(f"predictions/{web_name}/{interact_name}.png", "output2.csv")
-    img2 = git_difference(output_file="diff.csv", source_file="output1.csv", interaction_file="output2.csv")
-
-    interact_score = clip_similarity(img1, img2)
-    text1 = get_text_from_image(np.array(img1))
-    text2 = get_text_from_image(np.array(img2))
-    # print(text1)
-    # print(text2)
-    # text_similarity = SequenceMatcher(None, text1, text2).ratio()
-    reference = [text1]
-    candidate = text2
-    # 计算BLEU分数
-    bleu_score = sentence_bleu(reference, candidate)
-    results = {
-        "clip_similarity": interact_score.item(),
-        "text_similarity": bleu_score,
-        "position_similarity": position_similarity,
-    }
-    return results
-
-
 def get_interact_position(image_path):
     image = cv2.imread(image_path)
     height, width = image.shape[:2]
 
-    # 转换为HSV颜色空间
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
-    # 定义红色的HSV范围
+
     lower_red1 = np.array([0, 120, 70])
     upper_red1 = np.array([10, 255, 255])
     lower_red2 = np.array([170, 120, 70])
     upper_red2 = np.array([180, 255, 255])
 
-    # 创建掩膜
     mask1 = cv2.inRange(hsv, lower_red1, upper_red1)
     mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
     mask = mask1 | mask2
 
-    # 使用轮廓检测
     contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
-    # 遍历找到的轮廓
     norm_center_x = None
     norm_center_y = None
     print(len(contours))
@@ -331,21 +274,33 @@ def get_interact_position(image_path):
     # return (x_min + x_max) / 2, (y_min + y_max) / 2
 
 
-def get_all_score_new(web_name, interact_name, model_name, prompt_name):
-    generated_webpage_folder = prediction_path + f"{web_name}/{interact_name}-{prompt_name}-{model_name}"
+
+
+def get_all_score(web_name, interact_name, model_name, prompt_name):
+    generated_webpage_folder = prediction_path + f"{web_name}/result/{interact_name}-{prompt_name}-{model_name}"
+    config_file = prediction_path + f"{web_name}/action.json"
+
+    with open(config_file, "r") as fs:
+        config = json.loads(fs.read())
+    print(config)
+
     message = preprocess_for_evaluation(generated_webpage_folder)
 
     most_similar_image_name, most_similar_image_path, cp_similarity = find_match_interaction(
         web_page_folder_path=generated_webpage_folder,
-        reference_image_path=prediction_path + f"{web_name}/{interact_name}-2.png")
+        reference_image_path=prediction_path + f"{web_name}/{config[interact_name]['dst']}.png")
 
-    img1 = Image.open(prediction_path + f"{web_name}/{interact_name}-2.png")
+    print(most_similar_image_path)
+
+    img1 = Image.open(prediction_path + f"{web_name}/{config[interact_name]['dst']}.png")
+
     bleu_score = 0
     ssim_score = 0
     if most_similar_image_path is not None and message["flag"]:
         img2 = Image.open(most_similar_image_path)
         bleu_score = get_bleu(reference_image=img1, generated_image=img2)
-        ssim_score = ssim_similarity(prediction_path + f"{web_name}/{interact_name}-2.png", most_similar_image_path)
+        ssim_score = ssim_similarity(prediction_path + f"{web_name}/{config[interact_name]['dst']}.png",
+                                     most_similar_image_path)
 
     full_page_results = {
         "clip_similarity": cp_similarity,
@@ -361,20 +316,21 @@ def get_all_score_new(web_name, interact_name, model_name, prompt_name):
     interact_score = 0
     ssim_score = 0
     position_similarity_after = 0
-    if most_similar_image_name is not None and message["flag"]:
 
+    if most_similar_image_name is not None and message["flag"]:
         # src_position = interact_name.split("_")
         # src_width, src_height = get_image_size(prediction_path+f"{web_name}/0_source.png")
         # src_x = int(src_position[1]) / src_height
         # src_y = int(src_position[2]) / src_width
 
-        src_x, src_y = get_interact_position(image_path=prediction_path + f"{web_name}/{interact_name}-1-mark.png")
+        src_x, src_y = get_interact_position(
+            image_path=prediction_path + f"{web_name}/{config[interact_name]['src']}_mark.png")
         src_x_after, src_y_after = get_interact_position(
-            image_path=prediction_path + f"{web_name}/{interact_name}-2-mark.png")
+            image_path=prediction_path + f"{web_name}/{config[interact_name]['dst']}_mark.png")
 
         interact_position = most_similar_image_name.split("_")
         interact_width, interact_height = get_image_size(
-            prediction_path + f"{web_name}/{interact_name}-{prompt_name}-{model_name}/0_source.png")
+            prediction_path + f"{web_name}/result/{interact_name}-{prompt_name}-{model_name}/0_source.png")
         # interact_x = int(interact_position[1]) / interact_height
         # interact_y = int(interact_position[2]) / interact_width
         interact_x = int(interact_position[1]) / interact_width
@@ -383,25 +339,34 @@ def get_all_score_new(web_name, interact_name, model_name, prompt_name):
 
         position_similarity = 1 - max(abs(interact_x - src_x), abs(interact_y - src_y))
 
-        img1 = Image.open(prediction_path + f"{web_name}/{interact_name}.png")
+        img1 = Image.open(prediction_path + f"{web_name}/interaction_{interact_name}.png")
         # img2 = Image.open(prediction_path + f"{web_name}/{interact_name}-{prompt_name}-{model_name}/interact.png")
 
-        generated_src_path = prediction_path + f"{web_name}/{interact_name}-{prompt_name}-{model_name}/0_source.png"
+        generated_src_path = prediction_path + f"{web_name}/result/{interact_name}-{prompt_name}-{model_name}/0_source.png"
         generated_interact_path = most_similar_image_path
-        save_path = prediction_path + f"{web_name}/{interact_name}-{prompt_name}-{model_name}/interact.png"
+        save_path = prediction_path + f"{web_name}/result/{interact_name}-{prompt_name}-{model_name}/interact.png"
 
-        center_x, center_y = get_interact_part(generated_src_path, generated_interact_path, save_path)
-        interact_width_after, interact_height_after = get_image_size(generated_interact_path)
-        interact_x_after = int(center_x) / interact_width_after
-        interact_y_after = int(center_y) / interact_height_after
-        position_similarity_after = 1 - max(abs(interact_x_after - src_x_after), abs(interact_y_after - src_y_after))
+        try:
+            t1 = time.time()
+            center_x, center_y = get_interact_part(generated_src_path, generated_interact_path, save_path)
+            t2 = time.time()
+            print("Interaction Difference:", t2 - t1)
+            interact_width_after, interact_height_after = get_image_size(generated_interact_path)
+            interact_x_after = int(center_x) / interact_width_after
+            interact_y_after = int(center_y) / interact_height_after
+            position_similarity_after = 1 - max(abs(interact_x_after - src_x_after),
+                                                abs(interact_y_after - src_y_after))
 
-        img2 = Image.open(save_path)
-        ssim_score = ssim_similarity(prediction_path + f"{web_name}/{interact_name}.png", save_path)
-        interact_score = clip_similarity(img1, img2)
-        interact_score = interact_score.item()
+            img2 = Image.open(save_path)
+            ssim_score = ssim_similarity(prediction_path + f"{web_name}/interaction_{interact_name}.png", save_path)
+            interact_score = clip_similarity(img1, img2)
+            interact_score = interact_score.item()
 
-        bleu_score = get_bleu(reference_image=img1, generated_image=img2)
+            bleu_score = get_bleu(reference_image=img1, generated_image=img2)
+        except SystemError:
+            message["flag"] = False
+            message[generated_webpage_folder] = "Same image:[No interaction or Interaction Fail]"
+
     else:
         print("[Warning]: No Implemented Interaction")
 
@@ -415,46 +380,27 @@ def get_all_score_new(web_name, interact_name, model_name, prompt_name):
     return full_page_results, interact_results, message
 
 
-
-
-
 if __name__ == "__main__":
     # web_name = 1
     # interact_name = 1
-    web_name = 1
-    interact_name = 1
+    # web_name = 2
+    # interact_name = "1"
     # model_name = "gpt"
+    # model_name = "qwen-vl-3B"
+    # model_name = "qwen"
+    # model_name = "claude"
     model_name = "gemini"
+    # prompt_name = "mark_prompt"
     prompt_name = "direct_prompt"
+    # prompt_name = "mark_prompt"
     # prediction_path = "/Users/whalexiao/Downloads/pythonProject/Tool/tmp/Interaction2Code/sample/"
-    prediction_path = "./sample/"
+    prediction_path = "../annotation/dataset/"
 
-    interact_by_id(file_name=prediction_path+f"{web_name}/{interact_name}-{prompt_name}-{model_name}.html",
-                   folder_path=prediction_path+f"{web_name}/{interact_name}-{prompt_name}-{model_name}/")
-
-    interact_by_id(file_name=f"{1}-direct_prompt-claude.html",
-                   folder_path=f"{1}-direct_prompt-claude/")
-
-
-
-    full_page_results, interact_results, message = get_all_score_new(web_name, interact_name,
-                                                                     model_name,
-                                                                     prompt_name)
-    #
-    # results = {
-    #     web_name: {
-    #         interact_name: {
-    #             model_name: {
-    #                 prompt_name: {
-    #                     "full page": full_page_results,
-    #                     "interact": interact_results,
-    #                     "message": message
-    #                 }
-    #             }
-    #         }
-    #
-    #     }
-    # }
-    #
-    # with open("results1.json", "w") as f:
-    #     f.write(json.dumps(results))
+#                             interact_by_id(
+#                                 file_name=prediction_path + f"{web_name}/result/{interaction_number}-{prompt_name}-{model_name}.html",
+#                                 folder_path=prediction_path + f"{web_name}/result/{interaction_number}-{prompt_name}-{model_name}/")
+#
+# full_page_results, interact_results, message = get_all_score(str(web_name),
+#                                                                 str(interaction_number),
+#                                                                 model_name,
+#                                                                 prompt_name)

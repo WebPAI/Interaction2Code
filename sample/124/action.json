@@ -1,0 +1,164 @@
+{
+    "link": "https://www.invoiceninja.com",
+    "topic": "software",
+    "framework": "vue",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "hover the mouse over the \"Products\" item",
+        "description": "When the mouse hover over the \"Products\" item, the new component and text appear",
+        "tag type": [
+            "",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "hover the mouse over the \"WhyUs\" item",
+        "description": "When the mouse hover over the \"WhyUs\" item, the new component and text appear",
+        "tag type": [
+            "",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "hover the mouse over the \"Sign up\" button",
+        "description": "When the mouse hover over the \"Sign up\" button, the button size, position and text change",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "position",
+            "size",
+            "text"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "hover the mouse over the \"Let's get started\" area",
+        "description": "When the mouse hover over the \"Let's get started\" area, the area color changes",
+        "tag type": [
+            "",
+            "span",
+            "area"
+        ],
+        "visual type": [
+            "",
+            "color"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "hover the mouse over the \"Payment Gateways\" button",
+        "description": "When the mouse hover over the \"Payment Gateways\" button, the button color changes",
+        "tag type": [
+            "",
+            "span",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "color"
+        ]
+    },
+    "6": {
+        "src": "10",
+        "dst": "11",
+        "action": "click to the \"Payment Gateways\" button",
+        "description": "When the \"Payment Gateways\" button is clicked, the content switches",
+        "tag type": [
+            "",
+            "span",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "switch",
+            "text",
+            "new component"
+        ]
+    },
+    "7": {
+        "src": "12",
+        "dst": "13",
+        "action": "hover the mouse over the area",
+        "description": "When the mouse hover over the area, the area color changes",
+        "tag type": [
+            "",
+            "area",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "color"
+        ]
+    },
+    "8": {
+        "src": "14",
+        "dst": "15",
+        "action": "click to the \"Mobile & Desktop Apps\" button",
+        "description": "When the \"Mobile & Desktop Apps\" button is clicked, the content switches",
+        "tag type": [
+            "",
+            "span",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "new component",
+            "switch"
+        ]
+    },
+    "9": {
+        "src": "16",
+        "dst": "17",
+        "action": "click to the \"Why choose Invoice Ninja?\" item",
+        "description": "When the \"Why choose Invoice Ninja?\" item is clicked, the content  is collapsed",
+        "tag type": [
+            "",
+            "summary",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "position",
+            "text"
+        ]
+    },
+    "10": {
+        "src": "18",
+        "dst": "19",
+        "action": "click to the \"What is free invoicing software?\" item",
+        "description": "When the \"What is free invoicing software?\" item, the content switches and appears",
+        "tag type": [
+            "",
+            "span",
+            "datalist"
+        ],
+        "visual type": [
+            "",
+            "position",
+            "text",
+            "new component",
+            "switch"
+        ]
+    }
+}

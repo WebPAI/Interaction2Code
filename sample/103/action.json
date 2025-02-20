@@ -1,0 +1,63 @@
+{
+    "link": "https://movx.vercel.app/",
+    "topic": "video",
+    "framework": "react",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click the \"theme\" button",
+        "description": "after clicking the \"theme\" button, the theme color change from dark to light",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "switch",
+            "color"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click the \"left\" button",
+        "description": "after clicking the \"left\" button, change to introduction of another movie",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "switch"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click the \"Discover\" button",
+        "description": "after clicking the \"Discover\" button, a new component pop out, which contains 3 buttons, \"Popular\", \"Upcoming\" and \"Top Rated\".",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "switch",
+            "new component"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "move the cursor to the \"like\" button",
+        "description": "a new text pop out, indicating that this movie would be add to favorite if clicking the \"like\" button.",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "new component"
+        ]
+    }
+}

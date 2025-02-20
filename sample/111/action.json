@@ -1,0 +1,69 @@
+{
+    "link": "https://www.accent.reviews/",
+    "topic": "software development",
+    "framework": "traditional",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click on the top right sun icon",
+        "description": "after clicking the icon, the background color turned black and the sun icon turned to moon",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "color"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click on the \"Getting started\" button",
+        "description": "after clicking the button, turn to the guide page",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "newpage"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click on the \"Blog\" button",
+        "description": "after clicking the button, turn to the blog page",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click on the \"Try it now\" button",
+        "description": "after clicking the button, the log-in page pops out",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new window"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click on the \"GitHub\" button",
+        "description": "after clicking the button, the GitHub repository of the website pops out",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new window"
+        ]
+    }
+}

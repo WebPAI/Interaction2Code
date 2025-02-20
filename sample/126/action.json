@@ -1,0 +1,90 @@
+{
+    "link": "https://www.hugedomains.com/",
+    "topic": "search",
+    "framework": "traditional",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click to the envelope style button",
+        "description": "When the envelope style button is clicked, the new window and text appear",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "new window",
+            "new component"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "hover the mouse over the \"Search\" item",
+        "description": "When the mouse hover over the \"Search\" item, the item color changes",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "color"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click to the button in the lower left corner",
+        "description": "When the button in the lower left corner is clicked, the new component and text appear",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click to the downward arrow button",
+        "description": "When the downward arrow button is clicked, the page changes",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "position",
+            "new component",
+            "text",
+            "switch"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click to the rightward arrow button",
+        "description": "When the rightward arrow button is clicked, the image and text switch",
+        "tag type": [
+            "",
+            "button",
+            "span",
+            "image"
+        ],
+        "visual type": [
+            "",
+            "position",
+            "new component",
+            "text",
+            "switch"
+        ]
+    }
+}

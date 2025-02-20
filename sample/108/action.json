@@ -1,0 +1,86 @@
+{
+    "link": "https://zulip.com/",
+    "topic": "business",
+    "framework": "react",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click the \"Product\" button",
+        "description": "after clicking the \"Product\" button, a new component pop out, showing some buttons.",
+        "tag type": [
+            "",
+            "button",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click the \"See it in use\" button",
+        "description": "after clicking the \"see it in use\" button, go to the new page which showing the usage of this product.",
+        "tag type": [
+            "",
+            "button",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "new page",
+            "text"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click the second block of text",
+        "description": "after clicking the second block of text, the clicked text become light, and the image on the right hand side change accordingly.",
+        "tag type": [
+            "",
+            "text",
+            "textarea"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "switch"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click the \"Business\" button",
+        "description": "after clicking the the \"Business\" button, go to the new page of efficient communication for bussiness.",
+        "tag type": [
+            "",
+            "text",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "new page"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "move the cursor to the \"Create organization\" button.",
+        "description": "after moving the cursor to the \"Create organization\" button, the button turns into green",
+        "tag type": [
+            "",
+            "text",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "switch",
+            "color",
+            "text"
+        ]
+    }
+}

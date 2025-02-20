@@ -4,7 +4,6 @@ import retry
 import google.generativeai as genai
 import os
 
-
 @retry.retry(tries=2, delay=2)
 def gemini_call_with_two_images(gemini_client, encoded_image1, encoded_image2, prompt):
     generation_config = genai.GenerationConfig(
@@ -48,7 +47,8 @@ def gemini_call_with_all_images(gemini_client, images, prompt):
 @retry.retry(tries=3, delay=2)
 def gpt4v_call_with_two_images(openai_client, source_image, interact_image, prompt):
     response = openai_client.chat.completions.create(
-        model="gpt-4o",
+        # model="gpt-4o",
+        model="gpt-4o-2024-08-06",
         messages=[
             {
                 "role": "user",
@@ -79,7 +79,6 @@ def gpt4v_call_with_two_images(openai_client, source_image, interact_image, prom
         seed=42
     )
 
-    print(response)
     response = response.choices[0].message.content.strip()
     response = cleanup_response(response)
 
@@ -183,6 +182,89 @@ def claude_call_with_all_images(anthropic_client, images, prompt):
     response = response.content[0].text.strip()
     response = cleanup_response(response)
     return response
+
+
+
+@retry.retry(tries=3, delay=2)
+def qwen_call_with_two_images(qwen_client, source_image, interact_image, prompt):
+    response = qwen_client.chat.completions.create(
+        # model="qwen2.5-vl-72b-instruct",
+        # model="qwen2.5-vl-7b-instruct",
+        model="qwen2.5-vl-3b-instruct",
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": prompt
+                    },
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{source_image}",
+                            "detail": "high"
+                        },
+                    },
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{interact_image}",
+                            "detail": "high"
+                        },
+                    },
+                ],
+            }
+        ],
+        max_tokens=2048,
+        temperature=1,
+        seed=42
+    )
+    print(response)
+    response = response.choices[0].message.content.strip()
+    response = cleanup_response(response)
+
+    return response
+
+
+@retry.retry(tries=3, delay=2)
+def qwen_call_with_all_images(qwen_client, images, prompt):
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": prompt
+                }
+            ]
+        }
+    ]
+
+    for img in images:
+        img_message = {
+            "type": "image_url",
+            "image_url": {
+                "url": f"data:image/jpeg;base64,{img}",
+                "detail": "high"
+            }
+        }
+        messages[0]['content'].append(img_message)
+
+    response = qwen_client.chat.completions.create(
+        model="qwen-vl-max-0809",
+        messages=messages,
+        max_tokens=2048,
+        temperature=1,
+        seed=42
+    )
+
+    response = response.choices[0].message.content.strip()
+    response = cleanup_response(response)
+
+    return response
+
+            
 
 
 def cleanup_response(response):

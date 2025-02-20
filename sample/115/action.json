@@ -1,0 +1,68 @@
+{
+    "link": "https://www.passbolt.com/",
+    "topic": "credential platform",
+    "framework": "react",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click on the \"Sign in\" button",
+        "description": "after clicking on the button, turn to the sign-in page",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "hover on the \"Help\" button",
+        "description": "after hovering over the button, a dropdown list will be displayed for documentation",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click on the button with red box on the left",
+        "description": "after clicking on the button, a new page of blog news will pop out",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new window"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click on the second block",
+        "description": "the page will scroll down for the second block to display in the upper part, and the image on the right will change correspondingly",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "position",
+            "switch"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click on the \"Kubernetes\" button",
+        "description": "after clicking  the button, the code will change to the deploy code in Kubernetes",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "text"
+        ]
+    }
+}

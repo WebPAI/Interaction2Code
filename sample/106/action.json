@@ -1,0 +1,33 @@
+{
+    "link": "https://react-redux.realworld.io/",
+    "topic": "blog",
+    "framework": "react",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click the \"Sign in\" button",
+        "description": "after clicking the \"sign in\" button, go to sign in page",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "new page"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click the \"Sign up\" button",
+        "description": "after clicking the \"sign in\" button, go to sign up page",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "new page"
+        ]
+    }
+}

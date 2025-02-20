@@ -1,0 +1,68 @@
+{
+    "link": "https://demo.cachethq.io/",
+    "topic": "status page system",
+    "framework": "vue",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click on the \"Services\" button",
+        "description": "after clicking on the button, services elements expand",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new component",
+            "text"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click on the select list",
+        "description": "after clicking on the select list, four options of \"Last Hour\" \"Last 12 Hours\", \"Week\", and \"Month\" show up",
+        "tag type": [
+            "select"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click on one of the options",
+        "description": "after clicking on the \"Last Hour\" option, the plot changes to the corresponding time slot",
+        "tag type": [
+            "option"
+        ],
+        "visual type": [
+            "switch"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click on \"8 minutes ago\" ",
+        "description": "after clicking, turn to the incident detail page",
+        "tag type": [
+            "text",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "hover on the \"?\"",
+        "description": "after hovering, an explanatory text pops out",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new component",
+            "text"
+        ]
+    }
+}

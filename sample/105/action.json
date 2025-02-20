@@ -1,0 +1,82 @@
+{
+    "link": "https://jira.ivorreic.com/",
+    "topic": "project management",
+    "framework": "traditional",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "move the cursor to the menu bar",
+        "description": "when moving the cursor to the menu bar, show the content of the menu bar. there are 3 buttons with text\" SEARCH ISSUES\", \"CREATE ISSUE\" and \"ABOUT\".",
+        "tag type": [
+            "",
+            "area"
+        ],
+        "visual type": [
+            "",
+            "size"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click one issue on the kanban board",
+        "description": "after clicking one issue on the kanban board, a new component pop out, which contain the details of this issue: Type, Bug, Story, Task, Status, ASSIGNEES, REPORTER and PRIORITY.",
+        "tag type": [
+            "",
+            "button",
+            "area"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "new component"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click \"Project settings\" button",
+        "description": "after clicking \"Project settings\" button, the page shows the project details, and provide text box to modify it.",
+        "tag type": [
+            "",
+            "button",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "new component"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click \"Recently Updated\" button",
+        "description": "after clicking \"Recently Updated\" button, select it as tag, and the kanban board will only show issues with tag \"Recently Updated\"",
+        "tag type": [
+            "",
+            "button",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "text"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click \"Add a comment\" text box",
+        "description": "after clicking \"Add a comment\" text box, the text box expand and \"save\" button and \"cancel\" button appear.",
+        "tag type": [
+            "",
+            "input",
+            "textarea"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "new component"
+        ]
+    }
+}

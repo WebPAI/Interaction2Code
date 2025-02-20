@@ -1,0 +1,97 @@
+{
+    "link": "https://www.dolibarr.org/",
+    "topic": "ERP software for business ",
+    "framework": "traditional",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click on the \"文档\" button",
+        "description": "after clicking the button, turn to the documentation page",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click on the \"特征\" button",
+        "description": "after clicking the button, scroll down to the feature section",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "position"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click on the \"请参阅社区部分\" button",
+        "description": "after clicking the button, scroll down to the community section",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "position"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click on the \"查看云优惠\" button",
+        "description": "after clicking the button, a new page for cloud solutions pops out",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new window"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click on the right arrow",
+        "description": "after clicking, the latest news turn to the second page",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new page",
+            "new component",
+            "text"
+        ]
+    },
+    "6": {
+        "src": "10",
+        "dst": "11",
+        "action": "click on the video box",
+        "description": "after clicking, the video begin to play",
+        "tag type": [
+            "video"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    },
+    "7": {
+        "src": "12",
+        "dst": "13",
+        "action": "click on the select list to choose display language",
+        "description": "after choosing English, the display language will change to English",
+        "tag type": [
+            "video",
+            "select",
+            "option"
+        ],
+        "visual type": [
+            "text",
+            "switch"
+        ]
+    }
+}

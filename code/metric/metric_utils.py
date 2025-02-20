@@ -25,8 +25,8 @@ class WebDriver:
     def create_driver(self):
         service = Service()
         options = Options()
-        # if self.headless:
-        #     options.add_argument("-headless")
+        if self.headless:
+            options.add_argument("-headless")
         driver = webdriver.Firefox(options=options, service=service)
 
 
@@ -73,6 +73,27 @@ class WebDriver:
         except Exception as e:
             print(e)
 
+        # try:
+        #     if self.browser_name != "chrome":
+        #         self.driver.execute_script("arguments[0].scrollIntoView();", element)
+        #
+        #     hover = ActionChains(self.driver).move_to_element(element)
+        #     hover.perform()
+        #     location = element.location
+        #     x = location['x']
+        #     y = location['y']
+        #     # time.sleep(stop_second)
+        #     time.sleep(stop_second)
+        #     # self.take_screenshot(f"web_images/{file_name}/{self.element_num}_{x}_{y}_click.png")
+        #     self.take_screenshot(path + f"/{self.element_num}_{x}_{y}_move.png")
+        #     self.element_num += 1
+        #     #
+        #     time.sleep(stop_second)
+        #     hover = ActionChains(self.driver).click(element)
+        #     hover.perform()
+        # except Exception as e:
+        #     print(e)
+
         # self.close_new_page()
 
     def take_screenshot(self, filename):
@@ -97,6 +118,8 @@ def convert_image_to_code(image_path, output_file, rotation):
     x, y, z = image_array.shape
     np.savetxt(output_file, image_array.reshape(x, y * z), fmt='%d', delimiter=',')
 
+    return image_array.reshape(x, y * z)
+
 
 def read_file(file_path):
     """读取文件并返回每一行的列表"""
@@ -116,12 +139,37 @@ def draw_rectangle(image_path, top_left, bottom_right):
 
 def get_pix(image_path1, image_path2, rotation):
     # git_command = "git" + " diff " + source_file + " " + interaction_file
+
     output_path1 = "output1.csv"
     output_path2 = "output2.csv"
+
     # diff_path = "diff.csv"
 
-    convert_image_to_code(image_path1, output_file=output_path1, rotation=rotation)
-    convert_image_to_code(image_path2, output_file=output_path2, rotation=rotation)
+    print(image_path1, image_path2)
+
+    img_array1 = convert_image_to_code(image_path1, output_file=output_path1, rotation=rotation)
+    img_array2 = convert_image_to_code(image_path2, output_file=output_path2, rotation=rotation)
+
+
+    row_number1, column_number1 = img_array1.shape[0], img_array1.shape[1]
+    row_number2, column_number2 = img_array2.shape[0], img_array2.shape[1]
+
+    if column_number1 != column_number2:
+        return 0, row_number2
+
+    if row_number1 == row_number2 and column_number1 == column_number2:
+        diff_array = img_array1 - img_array2
+
+        # 判断哪些行的非零元素数量不为零
+        non_zero_rows = np.any(diff_array != 0, axis=1)
+
+        # 获取这些行的索引
+        non_zero_indices = np.where(non_zero_rows)[0]
+
+        return np.min(non_zero_indices), np.max(non_zero_indices)
+
+
+
     git_command = "./git-diff-lines"
 
     result = subprocess.run(git_command, shell=True, capture_output=True, text=True)
@@ -229,34 +277,3 @@ def preprocess_for_evaluation(folder_path):
         message["flag"] = False
 
     return message
-
-
-def get_interact_number(folder_path):
-    png_count = 0
-    for filename in os.listdir(folder_path):
-        if filename.endswith('.png'):
-            png_count += 1
-    return int(png_count / 5)
-
-
-if __name__ == "__main__":
-    # image_path1 = "test1.png"
-    # image_path2 = "test2.png"
-    # # mark_difference(image_path1, image_path2)
-    # get_interact_part(image_path1, image_path2, ".")
-    # web_names = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-    web_names = [i for i in range(1, 101)]
-    # model_names = ["gemini", "gpt"]
-    model_names = ["gemini", "gpt"]
-    prompt_names = ["direct_prompt"]
-
-    for web_name in web_names:
-        for model_name in model_names:
-            for prompt_name in prompt_names:
-                try:
-                    interact_num = get_interact_number(f"./example/{web_name}/")
-                except:
-                    continue
-                for i in range(1, interact_num + 1):
-                    message = preprocess_for_evaluation(f"./example/{web_name}/{i}-{prompt_name}-{model_name}")
-                    print(message)

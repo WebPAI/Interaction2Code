@@ -1,0 +1,70 @@
+{
+    "link": "https://cachethq.io/",
+    "topic": "status page system",
+    "framework": "vue",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click on the \"Documentation\" button",
+        "description": "after clicking on the button, turn to the introduction page",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "hover on one of the images",
+        "description": "after hovering over an image, the image row will stop scrolling",
+        "tag type": [
+            "button",
+            "image"
+        ],
+        "visual type": [
+            "position"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click on the \"2024 Recap\" button",
+        "description": "after clicking on the button, turn to the recap page",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click on the \"Learn more\" button",
+        "description": "after clicking on the button, the GitHub repository of the website pops out",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new window"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click on the \"3.x Demo\" button",
+        "description": "after clicking on the button, turn to the demo page",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    }
+}

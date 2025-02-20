@@ -1,0 +1,117 @@
+{
+    "link": "https://plausible.io/",
+    "topic": "Traffic shop",
+    "framework": "react",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click to the \"Why Plausible\" button",
+        "description": "When the \"Why Plausible\" button is clicked, the new component and text appear",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click to the \"Community\" button",
+        "description": "When the \"Community\" button is clicked, the new component and text appear",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click to the \"Yearly\" button",
+        "description": "When the \"Yearly\" button is clicked, the text and color switch",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "color",
+            "switch"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "Drag the progress bar",
+        "description": "When the progress bar is dragged, the text and progress position change",
+        "tag type": [
+            "",
+            "button",
+            "progress"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "position"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "Drag the progress bar",
+        "description": "When the progress bar is dragged, the text and progress position change",
+        "tag type": [
+            "",
+            "button",
+            "progress"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "position"
+        ]
+    },
+    "6": {
+        "src": "10",
+        "dst": "11",
+        "action": "Drag the progress bar",
+        "description": "When the progress bar is dragged, the text, progress position and button change",
+        "tag type": [
+            "",
+            "button",
+            "progress"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "position",
+            "switch"
+        ]
+    },
+    "7": {
+        "src": "12",
+        "dst": "13",
+        "action": "Click to the \"Start your free trial\" button",
+        "description": "When the \"Start your free trial\" button is clicked, the new page appear",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "new page",
+            "new component"
+        ]
+    }
+}

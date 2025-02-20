@@ -1,6 +1,6 @@
 # Json File Explanation
 
-We develop two GUI tools to conduct data annotation, `GUI1.py` for the failure type annotation, `GUI2.py` for the pairwise model comparision.
+We develop two GUI tools to conduct data annotation, `anno_failure.py` for the failure type annotation, `anno_interaction.py` for the pairwise model comparision.
 
 ## Failure File Description
 

@@ -1,0 +1,105 @@
+{
+    "link": "https://www.heroku.com/home",
+    "topic": "software development",
+    "framework": "traditional",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click on the magnifier icon on the top right",
+        "description": "after clicking, turn to the search page, where there is a query bar and web sources",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "hover on the \"More\" button",
+        "description": "When hovering over the \"More\" button, it triggers the display of a dropdown menu",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click on the \"Next\" button",
+        "description": "after clicking the button, the following component will scroll to the center",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "position"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click on the \"Node.js\" image",
+        "description": "after clicking, turn to the nodejs page",
+        "tag type": [
+            "image",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click on the \"Get Started Now\" button",
+        "description": "after clicking the button, turn to the sign-up page",
+        "tag type": [
+            "link",
+            "button"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "6": {
+        "src": "10",
+        "dst": "11",
+        "action": "click on the \"DEVELOPERS\" button",
+        "description": "after clicking the button, turn to the developers page",
+        "tag type": [
+            "link",
+            "button"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "7": {
+        "src": "12",
+        "dst": "13",
+        "action": "click on the video box",
+        "description": "after clicking, the video begin to play",
+        "tag type": [
+            "video"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    },
+    "8": {
+        "src": "14",
+        "dst": "15",
+        "action": "click on the query bar",
+        "description": "after clicking, the query bar lengthens and turns into white",
+        "tag type": [
+            "input"
+        ],
+        "visual type": [
+            "color",
+            "size"
+        ]
+    }
+}

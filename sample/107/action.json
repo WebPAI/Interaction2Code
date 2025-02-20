@@ -1,0 +1,70 @@
+{
+    "link": "https://docs.cypress.io/",
+    "topic": "document",
+    "framework": "traditional",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click \"Search\" text box",
+        "description": "after clicking \"Search\" text box, a new component pop out for you to input the word you want to search for",
+        "tag type": [
+            "",
+            "input",
+            "button",
+            "textarea"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click \"API\" button",
+        "description": "after clicking \"API\" button, go to the page of the information of the API",
+        "tag type": [
+            "",
+            "button",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "new page"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click \"other commands\" button",
+        "description": "after clicking \"other commands\" button, the page scroll down to the location of other commands.",
+        "tag type": [
+            "",
+            "button",
+            "link",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "switch",
+            "text"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click \"theme\" button",
+        "description": "after clicking \"theme\" button, the theme color change from ligbt to dark.",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "switch",
+            "color"
+        ]
+    }
+}

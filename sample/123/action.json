@@ -1,0 +1,114 @@
+{
+    "link": "https://dev.to/",
+    "topic": "Community",
+    "framework": "react",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "hover the mouse over the \"Create account\" button",
+        "description": "When the mouse hovers over the \"Create account\" button, the color change and underline appear",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "color"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "hover the mouse over the \"Home\" link",
+        "description": "When the mouse hovers over the \"Home\" link, the color change and underline appear",
+        "tag type": [
+            "",
+            "span",
+            "link"
+        ],
+        "visual type": [
+            "",
+            "color"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click to the bookmark shaped button",
+        "description": "When the bookmark shaped button is clicked, the new window appear",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "new page",
+            "new component",
+            "text"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "hover the mouse over \"Will AI Replace Your Job? How You Can Stay Ahead\" link",
+        "description": "When the mouse hovers over \"Will AI Replace Your Job? How You Can Stay Ahead\" link, the link color change",
+        "tag type": [
+            "",
+            "link"
+        ],
+        "visual type": [
+            "",
+            "color"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click to the \"...\" button",
+        "description": "When the \"...\" button is clicked, the new component and text appear",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "new component"
+        ]
+    },
+    "6": {
+        "src": "10",
+        "dst": "11",
+        "action": "Drag the internal progress bar",
+        "description": "When the internal progress bar is dragged, the text and position change",
+        "tag type": [
+            "",
+            "iframe",
+            "progress"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "position"
+        ]
+    },
+    "7": {
+        "src": "12",
+        "dst": "13",
+        "action": "click to the \"Search\" button",
+        "description": "When the \"Search\" button is clicked, the new page appear",
+        "tag type": [
+            "",
+            "button",
+            "input"
+        ],
+        "visual type": [
+            "",
+            "new page",
+            "text",
+            "new component"
+        ]
+    }
+}

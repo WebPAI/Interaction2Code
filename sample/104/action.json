@@ -1,0 +1,87 @@
+{
+    "link": "https://www.bbc.com/pidgin",
+    "topic": "news",
+    "framework": "react",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "move the cursor to the text",
+        "description": "when moveing the cursor to the text, underline the text",
+        "tag type": [
+            "",
+            "link",
+            "text",
+            "area"
+        ],
+        "visual type": [
+            "",
+            "text"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "move the cursor to the \"Nigeria\" tag",
+        "description": "when moveing the cursor to the \"Nigeria\" tag, underline the tag.",
+        "tag type": [
+            "",
+            "link",
+            "text",
+            "area"
+        ],
+        "visual type": [
+            "",
+            "text"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "move the cursur to button \"2\"",
+        "description": "when moving the cursur to button \"2\",  a box appears around the button \"2\".",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "color"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click the area of one news",
+        "description": "aftter clicking the area of one news, go to a new page of this news.",
+        "tag type": [
+            "",
+            "button",
+            "link",
+            "textarea",
+            "image",
+            "text"
+        ],
+        "visual type": [
+            "",
+            "new page",
+            "text"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click the \"Call BBC\" button.",
+        "description": "aftter clicking the  \"Call BBC\" button, a new page appear, with text and textbox for user to enter their contact information.",
+        "tag type": [
+            "",
+            "button",
+            "text",
+            "link"
+        ],
+        "visual type": [
+            "",
+            "new page",
+            "text"
+        ]
+    }
+}

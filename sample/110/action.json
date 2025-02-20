@@ -1,0 +1,121 @@
+{
+    "link": "https://supabase.com/",
+    "topic": "software development",
+    "framework": "nextjs",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "hover on the \"Product\" button",
+        "description": "When hovering over the \"Product\" button, it triggers the display of a dropdown menu of the website products",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new component"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click on the \"Postgres Database\" block",
+        "description": "after clicking, turn to the database page",
+        "tag type": [
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "hover on the React icon",
+        "description": "the React icon will be brighter, while other icons will be dimmer. \"any framework\" will change to \"React\"",
+        "tag type": [
+            "image"
+        ],
+        "visual type": [
+            "text",
+            "color"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "hover on the hyperlink block",
+        "description": "the block will stop scrolling, and the hovered block will be brighter",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "color",
+            "position"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click on the \"Enterprise\" button",
+        "description": "after clicking the button, turn to the enterprise page",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    },
+    "6": {
+        "src": "10",
+        "dst": "11",
+        "action": "click on the \"SQL Editor\" button",
+        "description": "after clicking the button, the corresponding text and image will replace the content of \"Table Editor\"",
+        "tag type": [
+            "button"
+        ],
+        "visual type": [
+            "new component",
+            "text"
+        ]
+    },
+    "7": {
+        "src": "12",
+        "dst": "13",
+        "action": "click on the moon icon",
+        "description": "after clicking the button, a selection list will show 3 options for the theme color: \"System\", \"Dark\", and \"Light\"",
+        "tag type": [
+            "button",
+            "select"
+        ],
+        "visual type": [
+            "new component",
+            "text"
+        ]
+    },
+    "8": {
+        "src": "14",
+        "dst": "15",
+        "action": "click on the \"Light\" option",
+        "description": "after clicking the option, the background color turn white, and the moon icon change to a sun icon",
+        "tag type": [
+            "option"
+        ],
+        "visual type": [
+            "color"
+        ]
+    },
+    "9": {
+        "src": "16",
+        "dst": "17",
+        "action": "click on the \"Start your project\" button",
+        "description": "after clicking the button, turn to the log-in page",
+        "tag type": [
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "new page"
+        ]
+    }
+}

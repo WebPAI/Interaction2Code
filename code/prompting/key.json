@@ -1,5 +1,6 @@
 {
   "gemini": "your_gemini_key",
   "gpt": "your_openai_key",
-  "claude": "your_anthropic_key"
+  "claude": "your_anthropic_key",
+  "qwen": "your_qwen_key"
 }

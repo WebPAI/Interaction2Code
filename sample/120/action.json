@@ -1,0 +1,81 @@
+{
+    "link": "https://saleor.io/",
+    "topic": "technology",
+    "framework": "nextjs",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "hover the mouse over the \"CASE STUDY\nHow Lush tames global commerce with Saleor \" item",
+        "description": "When the mouse hover over the \"CASE STUDY\nHow Lush tames global commerce with Saleor \" item, the item color changes",
+        "tag type": [
+            "",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "color"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "hover the mouse over the \"Product \" item",
+        "description": "When the mouse hovers over the \"Product \" item, the new component and text appear",
+        "tag type": [
+            "",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "new component"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "hover the mouse over the \"Resources\" item",
+        "description": "When the mouse hovers over the \"Resources\" item, the new component and text appear",
+        "tag type": [
+            "",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "new component"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click to the transparent lines",
+        "description": "When the transparent lines is clicked, the content switch",
+        "tag type": [
+            "",
+            "image",
+            "progress"
+        ],
+        "visual type": [
+            "",
+            "switch",
+            "position"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click to the \"Log in\" button",
+        "description": "When the \"Log in\" button is clicked, the new page appear",
+        "tag type": [
+            "",
+            "button",
+            "link"
+        ],
+        "visual type": [
+            "",
+            "new page",
+            "new component"
+        ]
+    }
+}

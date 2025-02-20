@@ -1,0 +1,121 @@
+{
+    "link": "https://salinaka-ecommerce.web.app/shop",
+    "topic": "shop",
+    "framework": "react",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "hover the mouse over the image",
+        "description": "When the mouse hovers over the image, the new component appears and position changes",
+        "tag type": [
+            "",
+            "image",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text",
+            "position"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "click to the Filter button",
+        "description": "When the Filter button is clicked, the new window appears",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "new window",
+            "new component",
+            "text"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click to the \"All Brands\" select",
+        "description": "When the \"All Brands\" select is clicked, the options appear",
+        "tag type": [
+            "",
+            "option",
+            "select"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "drag the progress",
+        "description": "When the progress is dragged, the number changes and progress position changes",
+        "tag type": [
+            "",
+            "progress",
+            "output"
+        ],
+        "visual type": [
+            "",
+            "position",
+            "text"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click to the basket button",
+        "description": "When the basket button is clicked, the new window appears",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text",
+            "new window"
+        ]
+    },
+    "6": {
+        "src": "10",
+        "dst": "11",
+        "action": "click to the \"Show More Items\" button",
+        "description": "When the \"Show More Items\" button is clicked, the more items appear",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text",
+            "position"
+        ]
+    },
+    "7": {
+        "src": "12",
+        "dst": "13",
+        "action": "click to the \"Sign In\" button",
+        "description": "When the \"Sign In\" button is clicked, the new page appears",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text",
+            "new page"
+        ]
+    }
+}

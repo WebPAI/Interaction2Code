@@ -1,0 +1,103 @@
+{
+    "link": "https://hub.logseq.com/",
+    "topic": "knowledge community",
+    "framework": "react",
+    "1": {
+        "src": "0",
+        "dst": "1",
+        "action": "click to the \"Welcome\" item",
+        "description": "When the \"Welcome\" item is clicked, the new component and text appear",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "text",
+            "position"
+        ]
+    },
+    "2": {
+        "src": "2",
+        "dst": "3",
+        "action": "drag the internal progress bar",
+        "description": "When the internal progress bar is dragged, the new component appears and the position changes",
+        "tag type": [
+            "",
+            "iframe",
+            "progress"
+        ],
+        "visual type": [
+            "",
+            "position",
+            "new component"
+        ]
+    },
+    "3": {
+        "src": "4",
+        "dst": "5",
+        "action": "click to the \"Getting Started\" item",
+        "description": "When the \"Getting Started\" item is clicked, the new component appears and the page switches",
+        "tag type": [
+            "",
+            "span",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "switch",
+            "text"
+        ]
+    },
+    "4": {
+        "src": "6",
+        "dst": "7",
+        "action": "click to the \"How to switch from Roam Research to Logseq\" item",
+        "description": "When the \"How to switch from Roam Research to Logseq\" item is clicked, the new component appears and the page switches",
+        "tag type": [
+            "",
+            "span",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "new component",
+            "switch",
+            "text"
+        ]
+    },
+    "5": {
+        "src": "8",
+        "dst": "9",
+        "action": "click to the \"sun like\" button",
+        "description": "When the \"sun like\" button is clicked, the page color switches",
+        "tag type": [
+            "",
+            "button"
+        ],
+        "visual type": [
+            "",
+            "color",
+            "switch"
+        ]
+    },
+    "6": {
+        "src": "10",
+        "dst": "11",
+        "action": "click to the \"Daily workflows\" item",
+        "description": "When the \"Daily workflows\" button is clicked, the new component and text appear",
+        "tag type": [
+            "",
+            "button",
+            "span"
+        ],
+        "visual type": [
+            "",
+            "text",
+            "new component"
+        ]
+    }
+}
