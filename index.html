@@ -37,8 +37,79 @@
       white-space: pre-wrap;
       word-wrap: break-word;
     }
+    table {
+            width: 50%; /* 设置表格宽度 */
+            border-collapse: collapse; /* 合并表格边框 */
+        }
+        th, td {
+            border: 1px solid black; /* 设置边框样式 */
+            padding: 8px; /* 设置单元格内边距 */
+            text-align: center; /* 设置文本对齐方式 */
+        }
+        th {
+            background-color: #f2f2f2; /* 设置表头背景颜色 */
+        }
   </style> -->
 
+  <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+    }
+    
+    th {
+        background-color: #f5f5f5;
+        text-align: left;
+        padding: 8px;
+        border-bottom: 2px solid #ddd;
+    }
+    
+    td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    
+    .model-name {
+        font-weight: 500;
+    }
+    
+    .score {
+        text-align: right;
+    }
+    
+    .date {
+        background-color: #333;
+        color: white;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.9em;
+    }
+    
+    .check {
+        color: #28a745;
+    }
+
+    .tabs {
+        margin-bottom: 20px;
+    }
+    
+    .tab {
+        padding: 8px 16px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+    
+    .tab.active {
+        border-bottom: 2px solid #0366d6;
+        color: #0366d6;
+    }
+</style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
@@ -76,10 +147,10 @@
               ">Wenxuan Wang</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                Zhiyao Xu</a><sup>3</sup>
+                Zhiyao Xu</a><sup>3</sup>,
               </span>
               <span class="author-block">
-                Yuhang Wang</a><sup>4</sup>
+                Yuhang Wang</a><sup>4</sup>,
               </span>
               <span class="author-block">
                 <a href="https://www.cse.cuhk.edu.hk/lyu/home
@@ -127,10 +198,10 @@
                 <span class="link-block">
                   <a href="https://huggingface.co/datasets/whale99/Interaction2Code"
                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-images"></i>
-                    </span>
-                    <span>Data</span>
+                    <!-- <span class="icon">
+                      <i class="fab fa-file-pdf"></i>
+                    </span> -->
+                    <span>😁 Data</span>
                   </a>
                 </span>
 
@@ -159,7 +230,6 @@
         </div>
       </div>
       <!--/ Abstract. -->
-
     </div>
   </section>
 
@@ -200,22 +270,357 @@
         <img style='height: auto; width: 90%; object-fit: contain' src="static/images/overview.png"
           alt="overview_image">
       </div>
+    </secton>
 
 
-<!-- 
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Overall -->
+        <br />
+        <div style="text-align:center">
+          <h2 class="title is-3">Leaderboard</h2>
+        </div>
+        <div class="content has-text-justified">
+
+        <table border="2">
+          <!-- <caption>Performance of different MLLMs under different prompts on \task task.</caption> -->
+          <thead>
+            <!-- <tr>
+              <th rowspan="2">Model</th>
+              <th rowspan="2">Prompt</th>
+              <th colspan="5">Interaction Part</th>
+            </tr> -->
+            <tr>
+              <th>Model</th>
+              <th>Prompt</th>
+              <th>CLIP</th>
+              <th>SSIM</th>
+              <th>Text</th>
+              <th>Position</th>
+              <th>Implement Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="4">Qwen2.5-vl-3B-instruct</td>
+              <td>Direct</td>
+              <td>0.2100</td>
+              <td>0.1531</td>
+              <td>0.0415</td>
+              <td>0.2090</td>
+              <td>0.3449</td>
+            </tr>
+            <tr>
+              <td>CoT</td>
+              <td>0.1219</td>
+              <td>0.0894</td>
+              <td>0.0352</td>
+              <td>0.1212</td>
+              <td>0.1979</td>
+            </tr>
+            <tr>
+              <td>Mark</td>
+
+              <td>0.1706</td>
+              <td>0.1188</td>
+              <td>0.0514</td>
+              <td>0.1706</td>
+              <td>0.2647</td>
+            </tr>
+            <tr>
+              <td>Average</td>
+              <td>0.1675</td>
+              <td>0.1204</td>
+              <td>0.0427</td>
+              <td>0.1669</td>
+              <td>0.2692</td>
+            </tr>
+            <tr>
+              <td rowspan="4">Qwen2.5-vl-7B-instruct</td>
+              <td>Direct</td>
+              <td>0.3230</td>
+              <td>0.2177</td>
+              <td>0.0952</td>
+              <td>0.2529</td>
+              <td>0.4786</td>
+            </tr>
+            <tr>
+              <td>CoT</td>
+              <td>0.2806</td>
+              <td>0.1981</td>
+              <td>0.0744</td>
+              <td>0.2259</td>
+              <td>0.4305</td>
+            </tr>
+            <tr>
+              <td>Mark</td>
+              <td>0.3541</td>
+              <td>0.2468</td>
+              <td>0.1348</td>
+              <td>0.2798</td>
+              <td>0.5267</td>
+            </tr>
+            <tr>
+              <td>Average</td>
+              <td>0.3192</td>
+              <td>0.2209</td>
+              <td>0.1015</td>
+              <td>0.2529</td>
+              <td>0.4786</td>
+            </tr>
+            <tr>
+              <td rowspan="4">Qwen2.5-vl-72B-instruct</td>
+              <td>Direct</td>
+              <td>0.4624</td>
+              <td>0.3207</td>
+              <td>0.2450</td>
+              <td>0.3950</td>
+              <td>0.6524</td>
+            </tr>
+            <tr>
+              <td>CoT</td>
+              <td>0.5090</td>
+              <td>0.3692</td>
+              <td>0.2376</td>
+              <td>0.4385</td>
+              <td>0.7380</td>
+            </tr>
+            <tr>
+              <td>Mark</td>
+              <td>0.4992</td>
+              <td>0.3621</td>
+              <td>0.2995</td>
+              <td>0.4541</td>
+              <td>0.7112</td>
+            </tr>
+            <tr>
+              <td>Average</td>
+              <td>0.4902</td>
+              <td>0.3507</td>
+              <td>0.2607</td>
+              <td>0.4292</td>
+              <td>0.7005</td>
+            </tr>
+            <tr>
+              <td rowspan="4">Gemini-1.5-flash</td>
+              <td>Direct</td>
+              <td>0.4737</td>
+              <td>0.3616</td>
+              <td>0.2809</td>
+              <td>0.4320</td>
+              <td>0.6738</td>
+            </tr>
+            <tr>
+              <td>CoT</td>
+              <td>0.5093</td>
+              <td>0.3854</td>
+              <td>0.3217</td>
+              <td>0.4511</td>
+              <td>0.7112</td>
+            </tr>
+            <tr>
+              <td>Mark</td>
+              <td>0.5194</td>
+              <td>0.3898</td>
+              <td>0.3454</td>
+              <td>0.4612</td>
+              <td>0.7326</td>
+            </tr>
+            <tr>
+              <td>Average</td>
+              <td>0.5008</td>
+              <td>0.3789</td>
+              <td>0.3160</td>
+              <td>0.4481</td>
+              <td>0.7059</td>
+            </tr>
+            <tr>
+              <td rowspan="4">GPT-4o-20240806</td>
+              <td>Direct</td>
+              <td>0.5605</td>
+              <td>0.4149</td>
+              <td>0.3590</td>
+              <td>0.4888</td>
+              <td>0.7754</td>
+            </tr>
+            <tr>
+              <td>CoT</td>
+              <td>0.5234</td>
+              <td>0.4013</td>
+              <td>0.3663</td>
+              <td>0.4668</td>
+              <td>0.7273</td>
+            </tr>
+            <tr>
+              <td>Mark</td>
+              <td>0.5955</td>
+              <td>0.4488</td>
+              <td>0.4474</td>
+              <td>0.5225</td>
+              <td>0.8128</td>
+            </tr>
+            <tr>
+              <td>Average</td>
+              <td>0.5598</td>
+              <td><b>0.4217</b></td>
+              <td>0.3909</td>
+              <td>0.4927</td>
+              <td>0.7718</td>
+            </tr>
+            <tr>
+              <td rowspan="4">Claude-3.5-Sonnet-20240620</td>
+              <td>Direct</td>
+              <td>0.5674</td>
+              <td>0.4209</td>
+              <td>0.3833</td>
+              <td>0.5123</td>
+              <td>0.7914</td>
+            </tr>
+            <tr>
+              <td>CoT</td>
+              <td>0.5606</td>
+              <td>0.4005</td>
+              <td>0.3662</td>
+              <td>0.5085</td>
+              <td>0.7727</td>
+            </tr>
+            <tr>
+              <td>Mark</td>
+              <td>0.5944</td>
+              <td>0.4282</td>
+              <td>0.4319</td>
+              <td>0.5149</td>
+              <td>0.7968</td>
+            </tr>
+            <tr>
+              <td>Average</td>
+              <td><b>0.5742</b></td>
+              <td>0.4165</td>
+              <td><b>0.3938</b></td>
+              <td><b>0.5119</b></td>
+              <td><b>0.7870</br></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+    </secton>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Overall -->
+        <br />
+        <div style="text-align:center">
+          <h2 class="title is-3">Human Evaluation</h2>
+        </div>
+        <div class="content has-text-justified">
+          <!-- <br><br/> -->
+          <p></p>
+        </div>
+        <div class="columns is-centered">
+          <img style='height: auto; width: 90%; object-fit: contain' src="static/images/human_eval.png"
+            alt="human_eval">
+        </div>
+    </secton>
+
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Overall -->
+        <br />
+        <div style="text-align:center">
+          <h2 class="title is-3">Failure Type Description</h2>
+        </div></br>
+        <div style="text-align:left">
+          <h2 class="title is-5">Failure on Interactive Elements</h2>
+        </div></br>
+        <div class="content has-text-justified">
+  
+          <!-- <br><br/> -->
+          <p>
+            (a) <b>Interactive element missing</b>: MLLMs do not generate interactive elements. As shown in Figure (a), there is a chat button in the upper right corner of the reference web page. When clicked, a chat window pops up. However, there is no such button in the generated web page, and users cannot perform any operation. 
+          </br>
+            (b) <b>No interaction</b>: There is no interaction in the generated webpage. As shown in Figure (b), clicking button M in the original webpage will switch to the information of size "M". However, clicking "M" button in the generated, there is no change of the size information. It should be noted here that sometimes the lack of interaction does not result in the unavailability of functions. For example, suppose a web page contains a menu bar that can display detailed information after clicking. If MLLM does not achieve the click effect, but has displayed the detailed menu information, it does not affect the functionality of the web page.
+          </br>
+            (c) <b>Wrong interactive element</b>: MLLMs implement the interactive function on the wrong element. As shown in Figure (c), in the original webpage, after clicking "I'm donating on behalf of a company or organisation", two input boxes will appear. However, in the generated webpage, the input box will only appear after clicking "I' like to add 0.00 to my donation to cover any fees."
+          </br>  
+            (d) <b>Wrong type of interactive element</b>: The types of interactive elements generated by MLLM are wrong. As shown in Figure (d), the element for adjusting the price in the original web page is of input type, while the element for adjusting the price in the generated web page is of progress type.
+          </br>  
+            (e) <b>Wrong position of interactive element</b>: The interactive elements generated by MLLM are positioned incorrectly. As shown in Figure (e), the button in the original webpage is in the upper right corner of the image, while the generated button is below the image.</p>
+        </div>
+        <div class="columns is-centered">
+          <img style='height: auto; width: 90%; object-fit: contain' src="static/images/failure_type1.png"
+            alt="failure_type1">
+        </div>
+
+        <div style="text-align:left">
+          <h2 class="title is-5">Failure on Interactive Effects</h2>
+        </div></br>
+        <div class="content has-text-justified">
+  
+          <!-- <br><br/> -->
+          <p>
+            (f) <b>Wrong position after interaction</b>: The interactive effects generated by MLLM are in the wrong position. As shown in Figure (f), after clicking the dialogue button, the pop-up window is displayed in the lower left corner of the reference webpage, but appears in the middle of the generated webpage.
+          </br>
+            (g) <b>Wrong type of interaction effects</b>: As shown in Figure (g), in the reference webpage, the element that appears after clicking select is of option type, but in the generated web page, the element that appears is of text type.
+          </br>  
+            (h) <b>Effect on wrong elemen</b>t: MLLMs achieve the effect of interaction on the wrong elements. As shown in Figure (h), in the reference webpage, after clicking the "dark" button, the background color of the web page turns black. However, in the generated web page, after clicking the "dark" button, the block turns black and the background does not change.
+          </br>  
+          (i) <b>Partial Implementation</b>: MLLMs only implement a part of the interactive functionality. As shown in Figure (i), in the reference webpage, after clicking the select button, the button will become selected, and will return to its original state when clicked again. However, in the generated web page, the button can only be selected but not unselected.
+        </br>
+        (j) <b>Wrong function</b>: MLLM implements the wrong function. As shown in Figure (j), in the original webpage, clicking the button will cause a date selection box to appear, but in the generated webpage, clicking the button will generate a date display box.
+          <p>
+        </div>
+
+
+
+        <div class="columns is-centered">
+          <img style='height: auto; width: 90%; object-fit: contain' src="static/images/failure_type2.png"
+            alt="failure_type2">
+        </div>
+      </secton>
+
+      <section class="section">
+        <div class="container is-max-desktop">
+          <!-- Overall -->
+          <br />
+          <div style="text-align:center">
+            <h2 class="title is-3">Failure Distribution</h2>
+          </div>
+          <div class="content has-text-justified">
+            <p></p>
+          </div>
+          <div class="columns is-centered">
+            <img style='height: auto; width: 90%; object-fit: contain' src="static/images/failure_dis1.png"
+              alt="failure_dis1">
+          </div>
+
+          <div class="columns is-centered">
+            <img style='height: auto; width: 90%; object-fit: contain' src="static/images/failure_dis2.png"
+              alt="failure_dis2">
+          </div>
+
+          <div class="columns is-centered">
+            <img style='height: auto; width: 90%; object-fit: contain' src="static/images/failure_dis3.png"
+              alt="failure_dis3">
+          </div>
+
+        </secton>
+      
+
   <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{yuan2023cipherchat,
-  title={GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher}, 
-  author={Youliang Yuan and Wenxiang Jiao and Wenxuan Wang and Jen-tse Huang and Pinjia He and Shuming Shi and Zhaopeng Tu},
-  year={2023},
-  eprint={2308.06463},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL}
-}</code></pre>
+    <pre><code>
+      @article{xiao2024interaction2code,
+        title={Interaction2Code: How Far Are We From Automatic Interactive Webpage Generation?},
+        author={Xiao, Jingyu and Wan, Yuxuan and Huo, Yintong and Xu, Zhiyao and Lyu, Michael R},
+        journal={arXiv preprint arXiv:2411.03292},
+        year={2024}
+      }
+    </code></pre>
   </div>
-</section> -->
+</section>
+
 
 
   <footer class="footer">
