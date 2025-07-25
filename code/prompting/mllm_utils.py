@@ -3,11 +3,11 @@ from PIL import Image
 import retry
 import google.generativeai as genai
 import os
-
+temperature = 0
 @retry.retry(tries=2, delay=2)
 def gemini_call_with_two_images(gemini_client, encoded_image1, encoded_image2, prompt):
     generation_config = genai.GenerationConfig(
-        temperature=1,
+        temperature=temperature,
         candidate_count=1,
         max_output_tokens=4096,
     )
@@ -27,7 +27,7 @@ def gemini_call_with_two_images(gemini_client, encoded_image1, encoded_image2, p
 @retry.retry(tries=2, delay=2)
 def gemini_call_with_all_images(gemini_client, images, prompt):
     generation_config = genai.GenerationConfig(
-        temperature=1,
+        temperature=temperature,
         candidate_count=1,
         max_output_tokens=4096,
     )
@@ -75,7 +75,7 @@ def gpt4v_call_with_two_images(openai_client, source_image, interact_image, prom
             }
         ],
         max_tokens=4096,
-        temperature=1,
+        temperature=temperature,
         seed=42
     )
 
@@ -114,7 +114,7 @@ def gpt4v_call_with_all_images(openai_client, images, prompt):
         model="gpt-4o",
         messages=messages,
         max_tokens=4096,
-        temperature=1,
+        temperature=temperature,
         seed=2024
     )
 
@@ -145,7 +145,7 @@ def claude_call_with_two_images(anthropic_client, source_image, interact_image, 
         model="claude-3-5-sonnet-20240620",
         max_tokens=4096,
         messages=messages,
-        temperature=1
+        temperature=temperature
     )
     print(response)
     response = response.content[0].text.strip()
@@ -176,7 +176,7 @@ def claude_call_with_all_images(anthropic_client, images, prompt):
         model="claude-3-5-sonnet-20240620",
         max_tokens=4096,
         messages=messages,
-        temperature=1
+        temperature=temperature
     )
     print(response)
     response = response.content[0].text.strip()
@@ -217,7 +217,7 @@ def qwen_call_with_two_images(qwen_client, source_image, interact_image, prompt)
             }
         ],
         max_tokens=2048,
-        temperature=1,
+        temperature=temperature,
         seed=42
     )
     print(response)
@@ -255,7 +255,7 @@ def qwen_call_with_all_images(qwen_client, images, prompt):
         model="qwen-vl-max-0809",
         messages=messages,
         max_tokens=2048,
-        temperature=1,
+        temperature=temperature,
         seed=42
     )
 
