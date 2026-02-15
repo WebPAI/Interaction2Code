@@ -359,7 +359,8 @@ If you find our work helpful, please consider citing our paper:
   volume={},
   number={},
   pages={241-253},
-  doi={10.1109/ASE63991.2025.00028}}
+  doi={10.1109/ASE63991.2025.00028}
+}
 ```
 
 
