@@ -351,12 +351,15 @@ Our webpage is filtered from [C4](https://huggingface.co/datasets/legacy-dataset
 If you find our work helpful, please consider citing our paper:
 
 ```
-@article{xiao2024interaction2code,
-      title={Interaction2Code: Benchmarking MLLM-based Interactive Webpage Code Generation from Interactive Prototyping}, 
-      author={Jingyu Xiao and Yuxuan Wan and Yintong Huo and Zixin Wang and Xinyi Xu and Wenxuan Wang and Zhiyao Xu and Yuhang Wang and Michael R. Lyu},
-      journal={arXiv preprint arXiv:2411.03292},
-      year={2025}
-}
+@INPROCEEDINGS{xiao2025interaction2code,
+  author={Xiao, Jingyu and Wan, Yuxuan and Huo, Yintong and Wang, Zixin and Xu, Xinyi and Wang, Wenxuan and Xu, Zhiyao and Wang, Yuhang and Lyu, Michael R.},
+  booktitle={2025 40th IEEE/ACM International Conference on Automated Software Engineering (ASE 2025)}, 
+  title={Interaction2Code: Benchmarking MLLM-based Interactive Webpage Code Generation from Interactive Prototyping}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={241-253},
+  doi={10.1109/ASE63991.2025.00028}}
 ```
 
 
